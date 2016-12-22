@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VehiclePgm</string>
+    <string name="mobileno">தொலைபேசி எண்ணை உள்ளீடு</string>
+    <string name="staartno">ஆரம்ப எண்ணை சரியாக உள்ளீடு</string>
+    <string name="startanddigit">ஆரம்ப எண் மற்றும் பத்து இலக்க எண்ணை சரியாக உள்ளீடு</string>
+    <string name="tendigit">பத்து இலக்க எண்ணை உள்ளீடு</string>
+    <string name="billno">ரசீது எண்ணை உள்ளீடு</string>
+    <string name="namefarmer">விவசாயி பெயரை உள்ளீடு</string>
+    <string name="typecoconut">தேங்காய் வகையை உள்ளீடு</string>
+    <string name="weightcoconut">தேங்காய் எடையை   உள்ளீடு</string>
+    <string name="nofcoconut">மொத்த தேங்காயை உள்ளீடு</string>
+    <string name="piece">மொத்த தேங்காய்கள்</string>
+    <string name="weight">தேங்காய் எடை</string>
+    <string name="dname">ஓட்டுனர் பெயரை உள்ளீடு</string>
+    <string name="flocation">புறப்படும் இடத்தை உள்ளீடு</string>
+    <string name="tlocation">சேரும் இடத்தை உள்ளீடு</string>
+    <string name="vno">வாகன எண்ணை உள்ளீடு</string>
+</resources>

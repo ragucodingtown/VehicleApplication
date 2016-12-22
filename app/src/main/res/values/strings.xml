@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">VehiclePgm</string>
+
+    <string name="mobileno">Enter a mobile no</string>
+    <string name="tendigit">Enter a 10 digit number</string>
+    <string name="staartno">Starting number is unvaild</string>
+    <string name="startanddigit">Starting no is unvaild and Enter 10 digit no</string>
+
+    <string name="billno">Enter bill no</string>
+    <string name="namefarmer">Enter farmername</string>
+    <string name="typecoconut">Enter coconut type</string>
+    <string name="nofcoconut">Enter no.of.coconut</string>
+    <string name="weightcoconut">Enter coconut weight</string>
+
+    <string name="addcoconuttype">Enter coconut type</string>
+
+    <string name="piece">Total Coconuts</string>
+    <string name="weight">Coconut Weight</string>
+
+
+    <string name="flocation">Enter fromlocation</string>
+    <string name="tlocation">Enter tolocation</string>
+    <string name="vno">Enter vehicle no</string>
+    <string name="dname">Enter driver name</string>
+
+
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#f40d90</color>
+
+    <color name="radio_button_selected_color">#33e5c4</color>
+    <color name="radio_button_unselected_color">#e0e0e0</color>
+
+</resources>

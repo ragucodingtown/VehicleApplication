@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <!-- LEFT TITLE PART -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="155dp"
+        android:layout_weight="3"
+        android:background="@color/colorPrimary"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/title_price"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/textview_time"
+            android:text="12:30"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/billno_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:textColor="@android:color/white"
+            android:text="B:59864"
+            android:gravity="center"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/date_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/billno_tv"
+            android:layout_alignParentStart="true"
+            android:textColor="@android:color/white"
+            android:text="20-12-2016"
+            android:gravity="center"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <!-- RIGHT TITLE PART -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+
+        android:paddingEnd="20dp"
+        android:paddingStart="15dp"
+        android:paddingTop="20dp">
+
+        <ImageView
+            android:id="@+id/title_from_to_dots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="10dp"
+            android:src="@mipmap/from_to_purple" />
+
+        <TextView
+
+            android:id="@+id/fromlocation_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/title_from_to_dots"
+            android:layout_marginTop="-5dp"
+            android:layout_toEndOf="@+id/title_from_to_dots"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/title_from_to_dots_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/fromlocation_tv"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/title_from_to_dots"
+            android:src="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/tolocation_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_from_to_dots_divider"
+            android:layout_toEndOf="@id/title_from_to_dots"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="8dp"
+            android:layout_below="@+id/tolocation_tv"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true">
+
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               
+                android:id="@+id/farmername_tv"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:paddingTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/coconuttype_tv"
+                android:layout_below="@+id/farmername_tv"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:paddingTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/tradecoconut_tv"
+                android:layout_below="@+id/farmername_tv"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:paddingTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/drivername_tv"
+                android:layout_below="@+id/coconuttype_tv"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:paddingTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/vehicleno_tv"
+                android:layout_alignTop="@+id/drivername_tv"
+                android:layout_alignLeft="@+id/tradecoconut_tv"
+                android:layout_alignStart="@+id/tradecoconut_tv" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</LinearLayout>
+
+
