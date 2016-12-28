@@ -18,6 +18,7 @@ import java.util.ArrayList;
 public class ListAdapter extends BaseAdapter {
     Context context;
     ArrayList<TradeLoadData> tradeLoadDatas;
+    
 
     public ListAdapter(Context context, ArrayList<TradeLoadData> list) {
 
@@ -50,11 +51,11 @@ public class ListAdapter extends BaseAdapter {
         {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            convertView = inflater.inflate(R.layout.datas_page, null);
+            convertView = inflater.inflate(R.layout.testingdatas_page, null);
 
         }
 
-
+        final TextView time = (TextView) convertView.findViewById(R.id.time_tv);
         final TextView date = (TextView) convertView.findViewById(R.id.date_tv);
         final TextView billno = (TextView) convertView.findViewById(R.id.billno_tv);
         final TextView farmername = (TextView) convertView.findViewById(R.id.farmername_tv);
@@ -65,11 +66,12 @@ public class ListAdapter extends BaseAdapter {
         final TextView vehicleno = (TextView) convertView.findViewById(R.id.vehicleno_tv);
         final TextView drivername = (TextView) convertView.findViewById(R.id.drivername_tv);
 
+        time.setText(tradeload.getTime());
         date.setText(tradeload.getDate());
         billno.setText("B:"+tradeload.getBillno());
         farmername.setText(tradeload.getFarmername());
-        coconuttype.setText(tradeload.getCoconuttype());
         tradecoconut.setText(tradeload.getTradecoconut());
+        coconuttype.setText(tradeload.getCoconuttype());
         fromlocation.setText(tradeload.getFromlocation());
         tolocation.setText(tradeload.getTolocation());
         vehicleno.setText(tradeload.getVehicleno());

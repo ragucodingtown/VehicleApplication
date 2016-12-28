@@ -9,7 +9,7 @@
     <string name="billno">Enter bill no</string>
     <string name="namefarmer">Enter farmername</string>
     <string name="typecoconut">Enter coconut type</string>
-    <string name="nofcoconut">Enter no.of.coconut</string>
+    <string name="nofcoconut">Enter total coconuts</string>
     <string name="weightcoconut">Enter coconut weight</string>
 
     <string name="addcoconuttype">Enter coconut type</string>
@@ -22,6 +22,7 @@
     <string name="tlocation">Enter tolocation</string>
     <string name="vno">Enter vehicle no</string>
     <string name="dname">Enter driver name</string>
+    <string name="mdmobile">Enter MD mobile number</string>
 
 
 </resources>

@@ -6,15 +6,16 @@ package com.example.codingtown.vehiclepgm.model;
 public class TradeLoadData {
 
 
-    String date,billno, farmername, coconuttype,tradecoconut, fromlocation, tolocation,vehicleno,drivername;
+    String time,date,billno, farmername, coconuttype,tradecoconut, fromlocation, tolocation,vehicleno,drivername;
 
     public TradeLoadData() {
 
     }
 
-    public TradeLoadData(String date,String billno, String farmername, String coconuttype,
+    public TradeLoadData(String time,String date,String billno, String farmername, String coconuttype,
                          String tradecoconut, String fromlocation, String tolocation,String vehicleno,String drivername) {
 
+        this.time=time;
         this.date=date;
         this.billno=billno;
         this.farmername=farmername;
@@ -26,6 +27,14 @@ public class TradeLoadData {
         this.drivername=drivername;
     }
 
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     public String getDate() {
         return date;

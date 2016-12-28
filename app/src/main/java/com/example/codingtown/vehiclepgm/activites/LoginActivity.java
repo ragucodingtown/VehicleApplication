@@ -8,8 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.codingtown.vehiclepgm.R;
+import com.example.codingtown.vehiclepgm.sharedprefrence.LoginSession;
 
 /**
  * Created by CodingTown on 13-12-2016.
@@ -19,12 +21,12 @@ public class LoginActivity extends AppCompatActivity {
     TextInputLayout txl_mobileno;
     EditText et_mobileno;
     Button btn_login;
-
+    LoginSession loginSession;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-
+     loginSession=new LoginSession(getApplicationContext());
         txl_mobileno=(TextInputLayout)findViewById(R.id.mobileno_txl);
         et_mobileno=(EditText)findViewById(R.id.mobileno_et);
         btn_login=(Button)findViewById(R.id.login_btn);
@@ -34,13 +36,21 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String mobno=et_mobileno.getText().toString();
-
-                if ((et_mobileno.length() == 10)&&(mobno.startsWith("7")||mobno.startsWith("8")||mobno.startsWith("9")))
+                if (et_mobileno.getText().toString().equals("9865380903"))
                 {
+                    Toast.makeText(getApplicationContext(), "login Sucess", Toast.LENGTH_LONG).show();
+                    loginSession.createLoginSession(et_mobileno.getText().toString());
                     Intent ii=new Intent(LoginActivity.this,TradeLoadDataViewActivity.class);
                     startActivity(ii);
                     LoginActivity.this.finish();
                 }
+
+              /*  else if ((et_mobileno.length() == 10)&&(mobno.startsWith("7")||mobno.startsWith("8")||mobno.startsWith("9")))
+                {
+                    Intent ii=new Intent(LoginActivity.this,TradeLoadDataViewActivity.class);
+                    startActivity(ii);
+                    LoginActivity.this.finish();
+                }*/
 
                 else if (et_mobileno.length() ==0)
                 {
@@ -67,5 +77,12 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+    }
+    @Override
+    public void onBackPressed() {
+        Intent startMain = new Intent(Intent.ACTION_MAIN);
+        startMain.addCategory(Intent.CATEGORY_HOME);
+        startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(startMain);
     }
 }

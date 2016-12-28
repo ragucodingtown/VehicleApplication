@@ -24,6 +24,7 @@ public class DatabaseHandlers extends SQLiteOpenHelper
 
     private static final String _addcoconuttype = "addcoconuttype";
 
+    private static final String _time = "time";
     private static final String _date = "date";
     private static final String _billno = "billno";
     private static final String _farmername = "farmername";
@@ -49,6 +50,7 @@ public class DatabaseHandlers extends SQLiteOpenHelper
 
         String  CREATE_TRADE_TABLE = "CREATE TABLE "+ TABLE_TRADE + "("
                 + _date + " TEXT,"
+                + _time + " TEXT,"
                 + _billno + " TEXT,"
                 + _farmername + " TEXT,"
                 + _coconuttype + " TEXT,"
@@ -79,13 +81,14 @@ public class DatabaseHandlers extends SQLiteOpenHelper
     }
 
 
-    public void insertTrade(String date,String billno,String farmername,String coconuttype,
+    public void insertTrade(String time,String date,String billno,String farmername,String coconuttype,
                             String tradecoconut,String fromlocation,
                             String tolocation,String vehicleno,String drivername)
     {
         SQLiteDatabase db1 = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
+        values.put(_time,time);
         values.put(_date,date);
         values.put(_billno,billno);
         values.put(_farmername,farmername);
@@ -112,15 +115,17 @@ public class DatabaseHandlers extends SQLiteOpenHelper
             do {
                TradeLoadData tradeLoadData = new TradeLoadData();
 
-                tradeLoadData.setDate(cursor.getString(0));
-                tradeLoadData.setBillno(cursor.getString(1));
-                tradeLoadData.setFarmername(cursor.getString(2));
-                tradeLoadData.setCoconuttype(cursor.getString(3));
-                tradeLoadData.setTradecoconut(cursor.getString(4));
-                tradeLoadData.setFromlocation(cursor.getString(5));
-                tradeLoadData.setTolocation(cursor.getString(6));
-                tradeLoadData.setVehicleno(cursor.getString(7));
-                tradeLoadData.setDrivername(cursor.getString(8));
+                tradeLoadData.setTime(cursor.getString(0));
+                tradeLoadData.setDate(cursor.getString(1));
+                tradeLoadData.setBillno(cursor.getString(2));
+                tradeLoadData.setFarmername(cursor.getString(3));
+                tradeLoadData.setCoconuttype(cursor.getString(4));
+                tradeLoadData.setTradecoconut(cursor.getString(5));
+                tradeLoadData.setFromlocation(cursor.getString(6));
+                tradeLoadData.setTolocation(cursor.getString(7));
+                tradeLoadData.setVehicleno(cursor.getString(8));
+                tradeLoadData.setDrivername(cursor.getString(9));
+
 
                 tldata.add(tradeLoadData);
             }

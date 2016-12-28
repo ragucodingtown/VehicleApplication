@@ -9,6 +9,9 @@
    >
     <include layout="@layout/toolbar"
         android:id="@+id/toolbar"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -145,15 +148,40 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.03"
                     android:hint="Driver Name"
-                    android:maxLength="16"
+                    android:maxLength="15"
                     android:inputType="textCapSentences" />
             </android.support.design.widget.TextInputLayout>
         </LinearLayout>
 
-
     </LinearLayout>
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:visibility="gone">
 
-</LinearLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:id="@+id/mdmobileno_txl">
 
+                <EditText
+                    android:id="@+id/mdmobileno_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Trader mobile no"
+                    android:text="9865380903"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:textColor="#030000" />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
     </LinearLayout>

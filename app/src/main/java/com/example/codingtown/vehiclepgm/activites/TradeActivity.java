@@ -57,10 +57,13 @@ public class TradeActivity extends AppCompatActivity implements TextWatcher {
     ArrayAdapter<String> myAdapter;
     String[] item = new String[]{"Please search..."};
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.trade_page);
+
+
 
         mtool = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mtool);
@@ -85,6 +88,7 @@ public class TradeActivity extends AppCompatActivity implements TextWatcher {
     }
 
     private void initialize() {
+
         databaseHandlers = new DatabaseHandlers(getApplicationContext());
 
         actv_coconuttype = (CustomAutoCompleteView) findViewById(R.id.coconuttype_et);
@@ -108,10 +112,13 @@ public class TradeActivity extends AppCompatActivity implements TextWatcher {
         lnl_piece = (LinearLayout) findViewById(R.id.piece_lnl);
         lnl_tradecoconut = (LinearLayout) findViewById(R.id.tradecoconut_lnl);
 
+
+
         rgb_pieceweight = (RadioGroup) findViewById(R.id.pieceweight_rgb);
         rbtn_piece = (RadioButton) findViewById(R.id.piece_rbtn);
         rbtn_weight = (RadioButton) findViewById(R.id.weight_rbtn);
         rbtn_piece.setChecked(true);
+        //et_tradecoconut.setText("Pec:");
         txl_tradecoconut.setHint(getResources().getString(R.string.piece));
 
         et_noofcoconut.addTextChangedListener(this);
@@ -164,27 +171,23 @@ public class TradeActivity extends AppCompatActivity implements TextWatcher {
                 switch (position) {
 
                     case R.id.piece_rbtn:
-                        lnl_piece.setVisibility(View.VISIBLE);
-                        lnl_tradecoconut.setVisibility(View.VISIBLE);
+                        lnl_piece.setVisibility(View.GONE);
+                       // lnl_tradecoconut.setVisibility(View.VISIBLE);
                         txl_tradecoconut.setHint(getResources().getString(R.string.piece));
-                        et_tradecoconut.setText(" ");
+                        //et_tradecoconut.setText("Pec:");
                         break;
 
                     case R.id.weight_rbtn:
                         lnl_piece.setVisibility(View.GONE);
-                        lnl_tradecoconut.setVisibility(View.VISIBLE);
+                       // lnl_tradecoconut.setVisibility(View.VISIBLE);
                         txl_tradecoconut.setHint(getResources().getString(R.string.weight));
-                        et_tradecoconut.setText(" ");
+                       //et_tradecoconut.setText("Ton:");
                         break;
                 }
 
             }
         });
 
-
-    }
-
-    private void coconuttypeadd() {
 
     }
 
@@ -245,7 +248,7 @@ public class TradeActivity extends AppCompatActivity implements TextWatcher {
         }
     }
 
-    private void totalTrade() {
+   /* private void totalTrade() {
         noofcocnut_s = et_noofcoconut.getText().toString();
         wastagecoconut_s = et_wastagecoconut.getText().toString();
 
@@ -258,7 +261,7 @@ public class TradeActivity extends AppCompatActivity implements TextWatcher {
         }
         totalcoconut_s = String.valueOf(totalcoconut_i);
         et_tradecoconut.setText(totalcoconut_s);
-    }
+    }*/
 
 
     @Override
@@ -284,10 +287,10 @@ public class TradeActivity extends AppCompatActivity implements TextWatcher {
                         txl_farmername.setError(getResources().getString(R.string.namefarmer));
                     } else if (et_coconutype.length() == 0) {
                         txl_coconuttype.setError(getResources().getString(R.string.typecoconut));
-                    } else if (et_noofcoconut.length() == 0) {
-                        txl_noofcoconut.setError(getResources().getString(R.string.nofcoconut));
+                    } else if (et_tradecoconut.length() == 0) {
+                        txl_tradecoconut.setError(getResources().getString(R.string.nofcoconut));
                     } else if ((et_billno.length() > 0) && (et_farmername.length() > 0) &&
-                            (et_coconutype.length() > 0) && (et_noofcoconut.length() > 0)) {
+                            (et_coconutype.length() > 0) && (et_tradecoconut.length() > 0)) {
                         goToNextPage();
 
                     }
@@ -299,9 +302,9 @@ public class TradeActivity extends AppCompatActivity implements TextWatcher {
                     } else if (et_coconutype.length() == 0) {
                         txl_coconuttype.setError(getResources().getString(R.string.typecoconut));
                     } else if (et_tradecoconut.length() == 0) {
-                        txl_coconuttype.setError(getResources().getString(R.string.weightcoconut));
+                        txl_tradecoconut.setError(getResources().getString(R.string.weightcoconut));
                     } else if ((et_billno.length() > 0) && (et_farmername.length() > 0) &&
-                            (et_coconutype.length() > 0) && (et_tradecoconut.length() > 0)) {
+                            (et_coconutype.length() > 0) &&  (et_tradecoconut.length() > 0)) {
                         goToNextPage();
                     }
 
@@ -329,7 +332,9 @@ public class TradeActivity extends AppCompatActivity implements TextWatcher {
                 }, mYear, mMonth, mDay);
         datePickerDialog.show();
     }
-
+    long date = System.currentTimeMillis();
+    SimpleDateFormat sdf = new SimpleDateFormat("h:mm a");
+    String currenttime = sdf.format(date);
     public void goToNextPage()//  this datas pass to another pages
     {
         Intent a = new Intent(TradeActivity.this, LoadActivity.class);
@@ -339,6 +344,7 @@ public class TradeActivity extends AppCompatActivity implements TextWatcher {
         a.putExtra("noofcoconut", et_noofcoconut.getText().toString());
         a.putExtra("tradecoconut", et_tradecoconut.getText().toString());
         a.putExtra("dates", getSupportActionBar().getTitle());
+        a.putExtra("time",currenttime);
 
         startActivity(a);
         TradeActivity.this.finish();
@@ -354,7 +360,7 @@ public class TradeActivity extends AppCompatActivity implements TextWatcher {
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-        totalTrade();
+        //totalTrade();
     }
 
     @Override
